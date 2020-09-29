@@ -1,0 +1,6 @@
+---
+displayName: Tizen
+description: Tizen Stack
+tags: ["Tizen"]
+icon: /images/tizen.svg
+globalMemoryLimit: 2674Mi

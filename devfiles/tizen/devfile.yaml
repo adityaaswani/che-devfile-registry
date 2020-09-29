@@ -1,0 +1,30 @@
+---
+apiVersion: 1.0.0
+metadata:
+  generateName: tizen-
+projects:
+  -
+    name: console-java-simple
+    source:
+      type: git
+      location: "https://github.com/che-samples/console-java-simple.git"
+      branch: java1.11
+components:
+  -
+    type: chePlugin
+    id: adityaaswani/tizen-studio/latest
+  -
+    type: dockerimage
+    alias: studio
+    image: docker.io/adityaaswani/tizen-studio:latest
+    memoryLimit: 1024Mi
+    mountSources: true
+commands:
+  -
+    name: tizen version
+    actions:
+      -
+        type: exec
+        component: studio
+        command: "tizen version"
+        workdir: ${CHE_PROJECTS_ROOT}/console-java-simple
